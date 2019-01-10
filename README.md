@@ -10,6 +10,10 @@ Steps to run this project
 	g) run command like mongo
 3) open browser and run application by using http://localhost:3000. Now only myContact module has crud operation
 
+Note1: Interaction between websocket, NodeJs, AngularJs and Kafka is done to get real time feed from Kafka. To test it click on Contact->Websocket test
+
+Note2: Application cache is implemented by using PWA. Important files for this are ngsw-config.json, manifest.json, AppModule.ts, AppComponent.ts, LogService.ts. It works only in Production env i.e. if it is build by using "ng build --prod"
+
 # MeanAng4
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.3.

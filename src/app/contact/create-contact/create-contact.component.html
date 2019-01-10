@@ -1,0 +1,63 @@
+<div *ngIf="model.isContactAdded">
+  <h1>A new contact is added successfully.<br /></h1>
+</div>
+<div class="container">
+    <h1>Add contact form</h1>
+    <hr>
+    <form #addContactForm="ngForm" class='form-horizontal' novalidate (submit)='contactFormSubmitHandler()'>
+      <div class='form-group row'>
+        <label for="userId" class='control-label col-sm-2'>User Id*</label>
+        <div class='col-sm-6'>
+          <input #userId="ngModel" type="text" id="userId" name="userId" required class='form-control' [(ngModel)]="model.userId">
+          <div *ngIf="userId.invalid && userId.touched" class="alert alert-danger">User Id is required</div>
+        </div>
+      </div>
+      <div class='form-group row'>
+        <label for="name" class='control-label col-sm-2'>Name*</label>
+        <div class='col-sm-6'>
+          <input #name="ngModel" type="text" id="name" name="name" required class='form-control' [(ngModel)]="model.name">
+          <div *ngIf="name.invalid && name.touched" class="alert alert-danger">Name is required</div>
+        </div>
+      </div>
+      <div class='form-group row'>
+        <label for="email" class='control-label col-sm-2'>Email*</label>
+        <div class='col-sm-6'>
+          <input #email="ngModel" type="email" id="email" name="email" required class='form-control' [(ngModel)]="model.email">
+          <div *ngIf="email.invalid && email.touched" class="alert alert-danger">Email is required</div>
+          <div *ngIf="email.errors?.email" class="alert alert-danger">Enter valid email</div>
+        </div>
+      </div>
+      <div class='form-group row'>
+        <label for="address" class='control-label col-sm-2'>Address</label>
+        <div class='col-sm-6'>
+          <input #address="ngModel" type="text" id="address" name="address" class='form-control' [(ngModel)]="model.address">
+        </div>
+      </div>
+      <div class='form-group row'>
+        <label for="phone" class='control-label col-sm-2'>Phone*</label>
+        <div class='col-sm-6'>
+          <input #phone="ngModel" type="text" id="phone" name="phone" required class='form-control' [(ngModel)]="model.phone">
+          <div *ngIf="phone.invalid && phone.touched" class="alert alert-danger">Phone number is required</div>
+        </div>
+      </div>
+      <div class='form-group row'>
+        <label for="income" class='control-label col-sm-2'>Income*</label>
+        <div class='col-sm-6'>
+          <input #income="ngModel" type="number" id="income" name="income" required class='form-control' [(ngModel)]="model.income">
+          <div *ngIf="income.invalid && income.touched" class="alert alert-danger">Income is required</div>
+        </div>
+      </div>
+      <div class='form-group row'>
+        <label for="createdDate" class='control-label col-sm-2'>Created*</label>
+        <div class='col-sm-6'>
+          <input #createdDate="ngModel" type="date" id="createdDate" name="createdDate" required class='form-control' [(ngModel)]="model.createdDate">
+          <div *ngIf="createdDate.invalid && createdDate.touched" class="alert alert-danger">Created date is required</div>
+        </div>
+      </div>
+      
+      <div class='btn-group btn-group-sm col-sm-offset-4' >
+        <button type="submit" class="btn btn-primary" [disabled]="!addContactForm.form.valid">Submit</button>
+        <button type="reset" class="btn btn-primary">Reset</button>
+      </div>
+    </form>
+  </div>
