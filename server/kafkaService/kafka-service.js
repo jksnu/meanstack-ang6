@@ -1,9 +1,10 @@
 const kafka = require('kafka-node');
 var Consumer = kafka.Consumer;
 const topicDetail = [
-    { topic: 'jitendraTopic', partition: 0 }
+    { topic: 'jitendraTopic1', partition: 0 }
 ];
-const client = new kafka.Client();
+//const client = new kafka.Client();
+const client = new kafka.KafkaClient()
 var socket;
 
 class KafkaService{
@@ -11,7 +12,7 @@ class KafkaService{
 
     createConsumer(){
         var me = this;
-        var consumer = new Consumer(client, topicDetail, {autoCommit: true});
+        var consumer = new Consumer(client, topicDetail, {autoCommit: false});
 
         consumer.on('message', me.processKafkaFeed);
 
