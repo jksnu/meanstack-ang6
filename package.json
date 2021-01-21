@@ -33,7 +33,7 @@
     "kafka-node": "^5.0.0",
     "mongodb": "^3.4.1",
     "rxjs": "^6.5.4",
-    "socket.io": "^2.3.0",
+    "socket.io": "^2.4.0",
     "socket.io-client": "^2.3.0",
     "tslib": "^1.10.0",
     "zone": "^0.3.4",
