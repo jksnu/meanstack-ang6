@@ -28,7 +28,7 @@
     "@ngrx/store": "^8.6.0",
     "body-parser": "^1.19.0",
     "core-js": "^3.6.2",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "g": "^2.0.1",
     "kafka-node": "^5.0.0",
     "mongodb": "^3.4.1",
